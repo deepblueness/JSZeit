@@ -45,10 +45,10 @@ Question.prototype.getRandomQuestion = function () {
     }
 
 }
-var question1 = new Question("Are you cool?", ['yes', 'no'], 0);
-var question2 = new Question("Is JS amazing?", ['yes', 'no'], 0);
-var question3 = new Question("Are you the best programmer ever?", ['yes', 'no'], 0);
-var question4 = new Question("Where is Moldova located?", ['in Africa', 'in Latin America', 'in Europe'], 2);
+var question1 = new Question("Are you cool?", ['yes', 'no'], 'yes');
+var question2 = new Question("Is JS amazing?", ['yes', 'no'], 'yes');
+var question3 = new Question("Are you the best programmer ever?", ['yes', 'no'], 'yes');
+var question4 = new Question("Where is Moldova located?", ['in Africa', 'in Latin America', 'in Europe'], 'in Europe');
 
 var availableQuestions = [question1, question2, question3, question4];
 question1.getRandomQuestion();
