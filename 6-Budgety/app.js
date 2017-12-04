@@ -135,6 +135,12 @@ var UIController = (function () {
         dateLabel: '.budget__title--month',
 
     };
+    var nodeListForEach = function(list, callback) {
+        for (var i = 0; i < list.length; i++) {
+            callback(list[i], i);
+        }
+    };
+
 
     return {
         getInput: function () {
@@ -218,11 +224,7 @@ var UIController = (function () {
             return (type === 'exp' ? '-' : '+') + ' ' + int + '.' + dec;
 
         },
-        nodeListForEach: function (list, callback) {
-            for (var i = 0; i < list.length; i++) {
-                callback(list[i], i);
-            }
-        },
+
         displayMonth: function () {
             var now, year, month, monthNames;
             now = new Date();
@@ -240,7 +242,7 @@ var UIController = (function () {
                 DOMstrings.inputDescription + ',' +
                 DOMstrings.inputValue);
 
-           UIController.nodeListForEach(fields, function (cur) {
+            nodeListForEach(fields, function (cur) {
                 cur.classList.toggle('red-focus');
             });
             document.querySelector(DOMstrings.inputButton).classList.toggle('red');
